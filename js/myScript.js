@@ -29,7 +29,7 @@ function calculatePrice(burgerPrice) {
 
 function calculateCoupon(couponToValidate) {
     if (couponToValidate == "") {
-        return 1;
+        return 0;
     }
     else {
 
