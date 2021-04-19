@@ -4,14 +4,17 @@ window.addEventListener("load", function (event) {
 });
 
 function onWindowLoad() {
-    var sconto =
     ingredients = document.querySelectorAll("[type=checkbox]");
     console.log(ingredients);
     var button = document.getElementById("button");
     coupon = document.getElementById("coupon");
     button.addEventListener("click", function (event) {
+        // INIETTA NEL CODICE IL PREZZO CALCOLATO E SOTTRAE LA PERCENTUALE DI SCONTO
+        burgerPrice = 5;
+        var totalPrice = calculatePrice(burgerPrice);
         var userCoupon = document.getElementById("coupon").value;
-        document.getElementById("price").innerHTML = (calculatePrice(5) - (5 * calculateCoupon(userCoupon) )).toFixed(2);
+        var finalPriceDiscounted = totalPrice - totalPrice * calculateCoupon(userCoupon);
+        document.getElementById("price").innerHTML = (finalPriceDiscounted).toFixed(2);
     });
 }
 
@@ -28,25 +31,27 @@ function calculatePrice(burgerPrice) {
 }
 
 function calculateCoupon(couponToValidate) {
+    var saleHTML = document.getElementById("sale-status");
     if (couponToValidate == "") {
+        saleHTML.innerHTML = "";
         return 0;
     }
     else {
-
         var couponArray = ["12354ABCDEF", "SCONTO10", "1234"];
-        var sconto = 1;
-        var saleHTML = document.getElementById("sale-status");
+        var sconto = 0;
         for (var i = 0; i < couponArray.length; i++) {
             if (couponToValidate == couponArray[i]) {
                 console.log("SCONTO TROVATO!");
-                sconto = 0.2;
                 saleHTML.innerHTML = "IL TUO COUPON E' STATO APPLICATO";
                 saleHTML.style = "color : #8cc371"
+                sconto = 0.2;
+                return sconto;
             }
             else {
                 console.log("SCONTO NON TROVATO!");
                 saleHTML.innerHTML = "IL TUO COUPON NON E' VALIDO";
                 saleHTML.style = "color : red"
+            
             }
         }
         return sconto;
