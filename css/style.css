@@ -45,6 +45,7 @@ body {
     margin-top: 50px;
     margin-bottom: 50px;
     background-color: white;
+    border-radius: 25px;
 }
 
 header,
@@ -60,6 +61,8 @@ header {
     position: relative;
     height: 140px;
     background-color: #fdbb40;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
 }
 
 header h1 {
@@ -212,6 +215,8 @@ footer {
     height: 100px;
     color: #ffffff;
     background-color: #d33359;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
 }
 
 .price-container {

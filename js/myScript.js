@@ -43,7 +43,7 @@ function calculateCoupon(couponToValidate) {
         for (var i = 0; i < couponArray.length; i++) {
             if (couponToValidate == couponArray[i]) {
                 console.log("SCONTO TROVATO!");
-                saleHTML.innerHTML = "IL TUO COUPON E' STATO APPLICATO";
+                saleHTML.innerHTML = "IL TUO COUPON E' STATO APPLICATO!";
                 saleHTML.style = "color : #8cc371"
                 sconto = 0.2;
                 return sconto;
