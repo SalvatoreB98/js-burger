@@ -168,7 +168,9 @@
    align-items: center;
    margin: 32px 0;
   }
-  
+  .sale{
+    margin-bottom: 50px;
+  }
   .discount input{
     width: 70%;
     margin-left: 16px;
