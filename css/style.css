@@ -29,9 +29,10 @@
   
   /* layout */
   .container {
-    width: 50%;
+    width: 75%;
+    margin: auto;
+    margin-top: 50px;
     min-width: 780px;
-    height: 100vh;
     background-color: white;
   }
   
@@ -55,8 +56,8 @@
   
   header:after {
     position: absolute;
-    top: -20%;
-    left: 80%;
+    top: 0;
+    right: -22px;
     content: '';
     width: 256px;
     height: 256px;
