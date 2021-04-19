@@ -8,16 +8,17 @@ function onWindowLoad() {
     console.log(ingredients);
     var button = document.getElementById("button");
     button.addEventListener("click", function (event) {
-        price = document.getElementById("price");
-        price.innerHTML = calculatePrice(price);
+        var price = parseInt(document.getElementById("price"));
+        document.getElementById("price").innerHTML = calculatePrice(5).toFixed(2);
     });
 }
-function calculatePrice(initialBurgerPrice) {
+function calculatePrice(burgerPrice) {
     ingredients = document.querySelectorAll("[type=checkbox]");
-    var somma = initialPrice;
+    var somma = burgerPrice;
+    console.log("OK");
     for (var i = 0; i < ingredients.length; i++) {
         if (ingredients[i].checked) {
-            somma += parseInt(ingredients[i].value);
+            somma = parseFloat(somma) + parseFloat(ingredients[i].value);
         }
     }
     return somma;
